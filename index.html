@@ -1,291 +1,251 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SB MOOV - Association d’expression scénique et corporelle</title>
-    <meta
-      name="description"
-      content="SB MOOV ateliers d’expression scénique et corporelle pour tous — théâtre, improvisation, danse libre, corps & voix, comédie musicale, bien‑être. Séance d’essai offerte."
-    />
-    <link rel="preload" href="assets/img/logo.png" as="image" />
-    <link rel="stylesheet" href="assets/css/styles.css" />
-    <link rel="icon" type="image/png" href="assets/img/favicon.png" />
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous">
-<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SB MOOV’ – L’expression scénique et corporelle pour tous</title>
+  <meta name="description" content="SB MOOV’ : ateliers d’expression scénique et corporelle pour tous — théâtre, impro, danse libre, corps & voix, comédie musicale. Séance d’essai offerte." />
+  <link rel="preload" href="assets/img/logo.png" as="image" />
+  <link rel="preload" href="assets/img/hero-final.jpg" as="image" />
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="assets/css/styles.css" />
 
-  </head>
-  <body>
-    <!------------------------------------ NAVBAR ------------------------------------>
-    <header class="nav">
-      <div class="nav__inner container">
-        <a class="nav__brand" href="#accueil" aria-label="SB MOOV'">
-          <img
-            src="assets/img/favicon.png"
-            class="nav__logo"
-            alt="SB MOOV' logo"
-          />
-          <span class="nav__name">SB MOOV'</span>
+  <!-- Leaflet (carte) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous">
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="nav">
+    <div class="nav__inner container">
+      <a class="nav__brand" href="#accueil" aria-label="SB MOOV’">
+        <img src="assets/img/logo.png" class="nav__logo" alt="SB MOOV’ logo" />
+        <span class="nav__name">SB MOOV’</span>
+      </a>
+
+      <button class="nav__toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+
+      <nav id="menu" class="menu" aria-label="Navigation principale">
+        <!-- Liens de section -->
+        <a class="icon-btn" href="#histoire" aria-label="Notre histoire" title="Notre histoire">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M4 5a3 3 0 0 1 3-3h11v18H7a3 3 0 0 0-3 3V5zm3-1a1 1 0 0 0-1 1v12.17A4.97 4.97 0 0 1 7 17h9V4H7z"/></svg>
         </a>
-        <button class="nav__toggle" aria-expanded="false" aria-controls="menu">
-          Menu
-        </button>
-        <nav id="menu" class="menu" aria-label="Navigation principale">
-          <a href="#planning">Planning</a>
-          <a href="#tarifs">Adhésion & Cotisation Annuelle</a>
-          <a href="#contact" class="btn btn--sm">Séance d’essai</a>
-        </nav>
-      </div>
-    </header>
+        <a class="icon-btn" href="#media" aria-label="Souvenirs" title="Souvenirs">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14h18zm-2-2H5V5h14v12zM8 13l2.5 3.01L13 13l3 4H8zM9 8.5A1.5 1.5 0 1 0 9 11a1.5 1.5 0 0 0 0-2.5z"/></svg>
+        </a>
+        <a class="icon-btn" href="#planning" aria-label="Planning" title="Planning">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M7 2h2v2h6V2h2v2h3a2 2 0 0 1 2 2v3H2V6a2 2 0 0 1 2-2h3V2zm15 8v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8h20zM6 14h4v4H6v-4z"/></svg>
+        </a>
+        <a class="icon-btn" href="#tarifs" aria-label="Tarifs" title="Tarifs">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M3 7h18v4a2 2 0 0 0 0 4v4H3v-4a2 2 0 0 0 0-4V7zm6 2v6h6V9H9z"/></svg>
+        </a>
+        <a class="icon-btn" href="#contact" aria-label="Contact" title="Contact">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5.001 2.5 2.5 0 0 1 0 5z"/></svg>
+        </a>
 
-    <main>
-      <!------------------------------------ HERO ------------------------------------>
-      <section id="accueil" class="hero">
-        <div class="aurora" aria-hidden="true"></div>
-        <div class="container hero__content">
-          <img
-            src="assets/img/logo.png"
-            alt="SB MOOV' logo"
-            class="hero__logo"
-          />
-          <h1 class="hero__title">
-            Énergie Passion<span class="word-animated accent"> Partage</span>
-          </h1>
-          <p class="hero__text">
-            Association d’expression scénique et corporelle
-          </p>
-          <div class="hero__actions">
-            <a class="btn" href="#planning">Découvrir plus</a>
-            <a class="btn btn--ghost" href="#contact">Nous contacter</a>
-          </div>
-          <!-- <div class="hero__badges">
-            <span>Théâtre</span><span>Impro</span><span>Danse libre</span><span>Corps & Voix</span><span>Comédie musicale</span><span>Bien‑être</span>
-          </div> -->
-        </div>
-      </section>
-
-      <!-- Notre histoire -->
-<section class="section history-section" id="histoire">
-  <div class="cursor-light"></div>
-  <div class="container">
-    <header class="section__head">
-      <h2>SB MOOV'...</h2>
-      <p class="muted">L’expression scénique et corporelle pour <span class="word-animated accent">TOUS !</span></p>
-    </header>
-
-    <div class="history-text">
-      <p>
-        Chez <strong>SB MOOV’</strong>, nous croyons que le mouvement et l’expression corporelle sont bien plus qu’une activité artistique : ce sont des moyens uniques de se découvrir, de s’affirmer et de partager des émotions.
-      </p>
-
-      <p>
-        Notre association propose des cours et ateliers adaptés à tous les âges et à tous les niveaux, mêlant travail corporel, interprétation et mise en scène pour développer à la fois la technique et la créativité.
-      </p>
-
-      <h3 >🎭 <span class="word-animated accent">Notre univers</span></h3>
-      <p>
-        Nous créons des projets artistiques modernes et variés, associant gestes, jeu scénique et atmosphères visuelles. Chaque représentation – gala ou événement en extérieur – est pensée pour offrir au public une expérience immersive et mettre en valeur chaque participant.
-      </p>
-
-      <h3>✨ <span class="word-animated accent">Pour qui ?</span></h3>
-      <p>
-        Que vous soyez débutant, confirmé ou simplement curieux, nous vous accueillons dans un cadre convivial, bienveillant et stimulant.
-      </p>
-
-      <h3>🌟 <span class="word-animated accent">Nos valeurs</span></h3>
-      <ul class="history-values">
-        <li><strong>Énergie :</strong> transmettre vitalité et dynamisme dans chaque projet</li>
-        <li><strong>Passion :</strong> vivre pleinement chaque moment sur scène</li>
-        <li><strong>Partage :</strong> créer des liens et des émotions collectives</li>
-      </ul>
+        <!-- Réseaux -->
+        <a class="icon-btn social" href="https://www.instagram.com/ton_compte" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5.5a5.5 5.5 0 1 0 0 11.001 5.5 5.5 0 0 0 0-11zM18 6.75a1 1 0 1 0 0 2.001 1 1 0 0 0 0-2z"/></svg>
+        </a>
+        <a class="icon-btn social" href="https://www.facebook.com/ta_page" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M13.5 22v-8h2.6l.4-3h-3v-1.9c0-.9.3-1.5 1.6-1.5h1.5V4.1c-.3 0-1.3-.1-2.4-.1-2.3 0-3.8 1.4-3.8 4v2.1H7v3h2.4v8h4.1z"/></svg>
+        </a>
+      </nav>
     </div>
-  </div>
-</section>
+  </header>
 
-
-  <!------------------------------------ Halo qui suit la souris ------------------------------------>
-  <div class="cursor-light" aria-hidden="true"></div>
-</section>
-
-<section class="section" id="media">
-  <div class="container">
-    <div class="section__head">
-      <h2>Souvenirs de scène</h2>
-      <p class="muted">Quelques images des galas.</p>
-    </div>
-
-    <div class="media-split">
-      <!-- Colonne gauche : CARROUSEL -->
-      <div class="media-left">
-        <div class="carousel">
-          <div class="carousel-track">
-            <div class="carousel-item"><img src="assets/img/gala/SB Moov-1.jpg" alt="Gala 1"></div>
-            <div class="carousel-item"><img src="assets/img/gala/SB Moov-2.jpg" alt="Gala 2"></div>
-            <div class="carousel-item"><img src="assets/img/gala/SB Moov-3.jpg" alt="Gala 3"></div>
-            <div class="carousel-item"><img src="assets/img/gala/SB Moov-4.jpg" alt="Gala 4"></div>
-            <div class="carousel-item"><img src="assets/img/gala/SB Moov-5.jpg" alt="Gala 5"></div>
-            <div class="carousel-item"><img src="assets/img/gala/SB Moov-6.jpg" alt="Gala 5"></div>
-            <div class="carousel-item"><img src="assets/img/gala/SB Moov-7.jpg" alt="Gala 5"></div>
-          </div>
-          <button class="carousel-btn prev" aria-label="Image précédente">&#10094;</button>
-          <button class="carousel-btn next" aria-label="Image suivante">&#10095;</button>
+  <main>
+    <!-- HERO -->
+    <section id="accueil" class="hero">
+      <div class="aurora" aria-hidden="true"></div>
+      <div class="container hero__content">
+        <img src="assets/img/logo.png" alt="SB MOOV’ logo" class="hero__logo" />
+        <h1 class="hero__title">
+          Énergie&nbsp;Passion <span class="word-animated accent">Partage</span>
+        </h1>
+        <p class="hero__text">SB MOOV’ – L’expression scénique et corporelle pour tous</p>
+        <div class="hero__actions">
+          <a class="btn btn--ghost" href="#tarifs">Adhésion & Cotisation Annuelle</a>
         </div>
       </div>
-      <!-- Colonne droite : VIDÉO -->
-      <div class="media-right">
-        <div class="video-embed">
-          <video controls autoplay muted loop playsinline>
-          <source src="assets/video/Les coulisses du Gala 2024.mp4" type="video/mp4">
-          Votre navigateur ne supporte pas la lecture vidéo.
-          </video>
+    </section>
+
+    <!-- ACTUALITÉS -->
+    <section class="section" id="actus">
+      <div class="container">
+        <div class="actus-list" id="actus-list"><!-- rempli en JS --></div>
+      </div>
+    </section>
+
+    <!-- HISTOIRE -->
+    <section class="section history-section" id="histoire">
+      <div class="cursor-light" aria-hidden="true"></div>
+      <div class="container">
+        <header class="section__head">
+          <h2>Notre histoire</h2>
+          <p class="muted">Une aventure collective, portée par <span class="word-animated accent">l’énergie</span>, la <span class="word-animated accent">passion</span> et le <span class="word-animated accent">partage</span>.</p>
+        </header>
+
+        <div class="history-text">
+          <p>Chez <strong>SB MOOV’</strong>, nous croyons que le mouvement et l’expression corporelle sont bien plus qu’une activité artistique : ce sont des moyens uniques de se découvrir, de s’affirmer et de partager des émotions.</p>
+          <p>Notre association propose des cours et ateliers adaptés à tous les âges et à tous les niveaux, mêlant travail corporel, interprétation et mise en scène pour développer à la fois la technique et la créativité.</p>
+
+          <h3>🎭 Notre univers</h3>
+          <p>Nous créons des projets artistiques modernes et variés, associant gestes, jeu scénique et atmosphères visuelles. Chaque représentation – gala ou événement en extérieur – est pensée pour offrir au public une expérience immersive et mettre en valeur chaque participant.</p>
+
+          <h3>✨ Pour qui ?</h3>
+          <p>Que vous soyez débutant, confirmé ou simplement curieux, nous vous accueillons dans un cadre convivial, bienveillant et stimulant.</p>
+
+          <h3>🌟 Nos valeurs</h3>
+          <ul class="history-values">
+            <li><strong>Énergie :</strong> transmettre vitalité et dynamisme dans chaque projet</li>
+            <li><strong>Passion :</strong> vivre pleinement chaque moment sur scène</li>
+            <li><strong>Partage :</strong> créer des liens et des émotions collectives</li>
+          </ul>
+
+          <h3>Notre histoire</h3>
+          <p>L’association, loi 1901, voit le jour en 1988 sous le nom <em>“Les Arlequines Gardéennes”</em>. À ses débuts, elle réunit une dizaine d’adhérents autour des majorettes et du jazz.</p>
+          <p>Au fil des années, les styles évoluent, les projets se diversifient, le nombre de participants grandit, tout comme notre famille artistique. En 2022, l’association change de nom et devient <strong>SB MOOV’</strong>.</p>
+          <p>Aujourd’hui, SB MOOV’ c’est une aventure collective avec toujours la même ambition : faire vibrer le public et révéler le potentiel de chacun.</p>
         </div>
       </div>
-      <div class="media-cta">
-  <a class="galerie-btn" href="galerie.html">Voir la galerie</a>
-</div>
-    </div>
-  </div>
-</section>
+    </section>
 
-
-      <!------------------------------------ PLANNING ------------------------------------>
-      <section id="planning" class="section section--alt">
-        <div class="container">
-          <header class="section__head">
-            <h2>Planning</h2>
-            <!-- <p class="muted">Remplacez par vos créneaux. Intégration Google Calendar possible.</p> -->
-          </header>
-          <div class="table-wrap">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Groupes</th>
-                  <th>jour</th>
-                  <th>Heure</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Eveil</td>
-                  <td>Mercredi</td>
-                  <td>14:00–15:00</td>
-                </tr>
-                <tr>
-                  <td>Initiation</td>
-                  <td>Mercredi</td>
-                  <td>15:00–16:00</td>
-                </tr>
-                <tr>
-                  <td>Elementaire</td>
-                  <td>Mercredi</td>
-                  <td>16:00–17:30</td>
-                </tr>
-                <tr>
-                  <td>Moyen</td>
-                  <td>Mercredi</td>
-                  <td>17:30–19:00</td>
-                </tr>
-                <tr>
-                  <td>Adultes 1</td>
-                  <td>Mercredi</td>
-                  <td>19:00–20:00</td>
-                </tr>
-                <tr>
-                  <td>Adultes 2</td>
-                  <td>Mercredi</td>
-                  <td>20:00–21:30</td>
-                </tr>
-                <tr>
-                  <td>Avancés</td>
-                  <td>Samedi</td>
-                  <td>10:00–12:30</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+    <!-- MÉDIAS : CARROUSEL + YOUTUBE -->
+    <section class="section" id="#{#~_çà_}">
+      <div class="container">
+        <div class="section__head">
+          <h2>Souvenirs de scène</h2>
+          <p class="muted">Quelque images de l'assos...</p>
         </div>
-      </section>
 
-      <!------------------------------------ ADHÉSION & TARIFS ------------------------------------>
-      <section id="tarifs" class="section section--alt">
-        <div class="container">
-          <header class="section__head">
-            <h2>Adhésion & Cotisation Annuelle</h2>
-            <p class="muted">
-              À partir de
-              <span class="word-animated accent">3 ans révolus</span>
-            </p>
-          </header>
-          <div class="pricing">
-            <article class="price">
-              <h3>1 Adhérent</h3>
-              <div class="price__value">220 € / an</div>
-              <a class="btn btn--block" href="#contact">Adhérer</a>
-            </article>
-            <article class="price price--highlight">
-              <h3>2 Adhérents</h3>
-              <div class="price__value">400 € / an</div>
-              <a class="btn btn--block" href="#contact">Adhérer</a>
-            </article>
-            <article class="price">
-              <h3>3 Adhérents</h3>
-              <div class="price__value">570 € / an</div>
-              <a class="btn btn--block" href="#contact">Adhérere</a>
-            </article>
+        <div class="media-split">
+          <!-- Carrousel gauche -->
+          <div class="media-left">
+            <div class="carousel">
+              <div class="carousel-track">
+                <div class="carousel-item"><img src="assets/img/gala/SB Moov-1.jpg" alt="Gala 1"></div>
+                <div class="carousel-item"><img src="assets/img/gala/SB Moov-2.jpg" alt="Gala 2"></div>
+                <div class="carousel-item"><img src="assets/img/gala/SB Moov-3.jpg" alt="Gala 3"></div>
+                <div class="carousel-item"><img src="assets/img/gala/SB Moov-4.jpg" alt="Gala 4"></div>
+                <div class="carousel-item"><img src="assets/img/gala/SB Moov-5.jpg" alt="Gala 5"></div>
+                <div class="carousel-item"><img src="assets/img/gala/SB Moov-6.jpg" alt="Gala 6"></div>
+                <div class="carousel-item"><img src="assets/img/gala/SB Moov-7.jpg" alt="Gala 7"></div>
+              </div>
+              <button class="carousel-btn prev" aria-label="Image précédente">&#10094;</button>
+              <button class="carousel-btn next" aria-label="Image suivante">&#10095;</button>
+            </div>
           </div>
-          <div class="muted">
-  <p>
-    L’adhésion peut être réglée en une seule fois ou en trois mensualités.  
-    Pour le paiement en 3 fois, les prélèvements auront lieu :
-  </p>
-  <ul class="styled-list">
-    <li><span>1</span> Jour de l’inscription</li>
-    <li><span>2</span> 8 décembre 2025</li>
-    <li><span>3</span> 9 mars 2026</li>
-  </ul>
-</div>
 
+          <!-- Vidéos YouTube à droite -->
+          <div class="media-right">
+            <div class="video-embed">
+              <video autoplay loop muted playsinline>
+                <source src="assets/video/Les coulisses du Gala 2024.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la lecture vidéo.
+              </video>
+            </div>
+          </div>
 
         </div>
-      </section>
-
-      <!------------------------------------ CONTACT ------------------------------------>
-<section id="contact" class="section section--alt">
-  <div class="container contact-card">   <!-- <= ajouté "container" -->
-    <h2 class="contact-title">Contact & accès</h2>
-
-    <ul class="contact-list">
-      <li><strong>Adresse du siège :</strong> 159 Avenue Sadi Carnot — 83130 LA GARDE</li>
-      <li><strong>Adresse des cours :</strong> MIS de La Planquette — 241 Mail de La Planquette — 83130 LA GARDE</li>
-      <li><strong>Téléphone :</strong> 06 82 37 12 58</li>
-      <li><strong>Email :</strong> <a href="mailto:sbmoov@hotmail.com">sbmoov@hotmail.com</a></li>
-    </ul>
-
-    <div class="map-wrap">
-      <div id="map-multi"></div>
-    </div>
-
-    <div class="contact-actions">
-      <a class="link-pill" href="https://maps.google.com/?q=159 Avenue Sadi Carnot, 83130 La Garde" target="_blank" rel="noopener">Siège (Google Maps)</a>
-      <a class="link-pill" href="https://maps.google.com/?q=MIS de La Planquette, 241 Mail de La Planquette, 83130 La Garde" target="_blank" rel="noopener">Salle de cours</a>
-    </div>
-  </div>
-</section>
-
-
-    </main>
-
-    <footer class="footer">
-      <div class="container footer__inner">
-        <p>© <span id="year"></span> M.Steven & SB MOOV'. Tous droits réservés.</p>
-        <!-- <nav class="footer__nav">
-          <a href="#">Mentions légales</a><a href="#">RGPD & cookies</a>
-        </nav> -->
       </div>
-    </footer>
+    </section>
 
-    <a href="#contact" class="cta-fab">Séance d’essai</a>
+    <!-- PLANNING -->
+    <section id="planning" class="section section--alt">
+      <div class="container">
+        <header class="section__head"><h2>Planning</h2></header>
+        <div class="table-wrap">
+          <table class="table">
+            <thead><tr><th>Groupes</th><th>Jour</th><th>Heure</th></tr></thead>
+            <tbody>
+              <tr><td>Éveil</td><td>Mercredi</td><td>14:00–15:00</td></tr>
+              <tr><td>Initiation</td><td>Mercredi</td><td>15:00–16:00</td></tr>
+              <tr><td>Élémentaire</td><td>Mercredi</td><td>16:00–17:30</td></tr>
+              <tr><td>Moyen</td><td>Mercredi</td><td>17:30–19:00</td></tr>
+              <tr><td>Adultes 1</td><td>Mercredi</td><td>19:00–20:00</td></tr>
+              <tr><td>Adultes 2</td><td>Mercredi</td><td>20:00–21:30</td></tr>
+              <tr><td>Avancés</td><td>Samedi</td><td>10:00–12:30</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
 
-    <script src="assets/js/main.js" defer></script>
-  </body>
+    <!-- TARIFS / ADHÉSION -->
+    <section id="tarifs" class="section section--alt">
+      <div class="container">
+        <header class="section__head">
+          <h2>Adhésion & Cotisation Annuelle</h2>
+          <p class="muted">À partir de <span class="word-animated accent">3 ans révolus</span></p>
+        </header>
+
+        <div class="pricing">
+          <article class="price"><h3>1 adhérent</h3><div class="price__value">220 € / an</div></article>
+          <article class="price price--highlight"><h3>2 adhérents</h3><div class="price__value">400 € / an</div></article>
+          <article class="price"><h3>3 adhérents</h3><div class="price__value">570 € / an</div></article>
+        </div>
+
+        <div class="muted">
+          <p>L’adhésion peut être réglée en une seule fois ou en trois mensualités. Pour le paiement en 3 fois, les prélèvements auront lieu :</p>
+          <ul class="styled-list">
+            <li>Jour de l’inscription</li>
+            <li>8 décembre 2025</li>
+            <li>9 mars 2026</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section--alt">
+      <div class="container contact-card">
+        <h2 class="contact-title">Contact & accès</h2>
+        <ul class="contact-list">
+          <li><strong>Adresse du siège :</strong> 159 Avenue Sadi Carnot — 83130 LA GARDE</li>
+          <li><strong>Adresse des cours :</strong> MIS de La Planquette — 241 Mail de La Planquette — 83130 LA GARDE</li>
+          <li><strong>Téléphone :</strong> 06.82.37.12.58</li>
+          <li><strong>Email :</strong> <a href="mailto:sbmoov@hotmail.com">sbmoov@hotmail.com</a></li>
+        </ul>
+
+        <div class="map-wrap" aria-label="Carte d'accès">
+          <div class="map-embed">
+            <iframe
+              title="MIS de La Planquette — La Garde"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2911.8141482334677!2d6.01321167650928!3d43.1294302861484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9195d418e29a3%3A0xeea8f35c469a54d0!2sMaison%20des%20Initiatives%20Sociales%20(M.I.S.)%20de%20la%20Planquette!5e0!3m2!1sfr!2sfr!4v1756494160467!5m2!1sfr!2sfr">
+            </iframe>
+          </div>
+        </div>
+        <div class="contact-actions">
+          <a class="link-pill" href="https://maps.google.com/?q=159 Avenue Sadi Carnot, 83130 La Garde" target="_blank" rel="noopener">Voir le siège</a>
+          <a class="link-pill" href="https://maps.google.com/?q=MIS de La Planquette, 241 Mail de La Planquette, 83130 La Garde" target="_blank" rel="noopener">Voir la salle de cours</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> SB MOOV’. Tous droits réservés.</p>
+      <div class="footer__socials">
+        <a class="social" href="https://www.instagram.com/ton_compte" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11.001 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7.001 3.5 3.5 0 0 0 0-7zm5-1.75a1 1 0 1 1 0 2.001 1 1 0 0 1 0-2z"/></svg>
+        </a>
+        <a class="social" href="https://www.facebook.com/ta_page" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M13.5 22v-8h2.6l.4-3h-3v-1.9c0-.9.3-1.5 1.6-1.5h1.5V4.1c-.3 0-1.3-.1-2.4-.1-2.3 0-3.8 1.4-3.8 4v2.1H7v3h2.4v8h4.1z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#tarifs" class="cta-fab">Adhérer</a>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
 </html>
