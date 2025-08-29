@@ -200,3 +200,97 @@ a{color:inherit;text-decoration:none}
 /* ===== Titres animés ===== */
 .word-animated{background:linear-gradient(-45deg,#ffb36b,#ff2d95,#8a2be2,#ffb36b);background-size:400% 400%;background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:gradientFlow 15s ease infinite;font-weight:bold}
 @keyframes gradientFlow{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+/* ===== Navbar mobile: keep FB/IG inside the bar, right aligned ===== */
+@media (max-width: 760px) {
+  .nav { padding-inline: 12px; }
+
+  .nav__inner{
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* hide the name on mobile to gain space */
+  .nav__name{ display: none; }
+  .nav__logo{ width: 32px; height: 32px; }
+
+  /* IMPORTANT: put menu back into normal flow */
+  .menu{
+    position: static !important;      /* cancel absolute */
+    inset: auto !important;           /* cancel top/right from old rule */
+    margin-left: auto;                /* push to the right */
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    width: 90px;
+
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* show only socials on mobile */
+  .menu a{ display: none !important; }
+  .menu a.social{ display: inline-grid !important; }
+
+  .icon-btn{ width: 36px; height: 36px; border-radius: 10px; }
+  .icon-btn svg{ width: 20px; height: 20px; }
+}
+
+@media (max-width: 760px) {
+  .pricing {
+    grid-template-columns: 1fr; /* 1 card par ligne */
+    gap: 20px; /* un peu plus d'air entre les cartes */
+  }
+
+  .price {
+    text-align: center; /* centre le contenu */
+    padding: 20px;
+  }
+
+  .price__value {
+    font-size: 2rem; /* lisible même en petit écran */
+  }
+}
+
+@media (max-width: 760px) {
+  .contact-card {
+    padding: 0 10px;
+  }
+
+  .contact-title {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+  }
+
+  .contact-list {
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+  }
+  .contact-list li {
+    margin: 8px 0;
+    line-height: 1.4;
+  }
+
+  /* Map plus arrondie et espacée */
+  .map-wrap {
+    margin: 16px 0;
+    border-radius: 12px;
+  }
+
+  /* Boutons en pile au lieu de côte-à-côte */
+  .contact-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .contact-actions .link-pill {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.map-embed{aspect-ratio:16/19}

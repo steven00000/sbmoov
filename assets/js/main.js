@@ -80,3 +80,40 @@ function renderHome(items){
     </article>`;
   }
 })();
+
+// ===== Swipe mobile pour le carrousel =====
+(() => {
+  const track = document.querySelector('.carousel-track');
+  if (!track) return;
+
+  let startX = 0, deltaX = 0, locked = false;
+  const next = document.querySelector('.carousel-btn.next');
+  const prev = document.querySelector('.carousel-btn.prev');
+
+  function onStart(e){
+    locked = true;
+    startX = (e.touches ? e.touches[0].clientX : e.clientX);
+    deltaX = 0;
+  }
+  function onMove(e){
+    if (!locked) return;
+    const x = (e.touches ? e.touches[0].clientX : e.clientX);
+    deltaX = x - startX;
+  }
+  function onEnd(){
+    if (!locked) return;
+    locked = false;
+    if (Math.abs(deltaX) > 50){
+      if (deltaX < 0) next?.click(); else prev?.click();
+    }
+    startX = deltaX = 0;
+  }
+
+  track.addEventListener('touchstart', onStart, { passive:true });
+  track.addEventListener('touchmove', onMove,  { passive:true });
+  track.addEventListener('touchend',  onEnd);
+  // (optionnel) support souris
+  track.addEventListener('mousedown', onStart);
+  window.addEventListener('mousemove', onMove);
+  window.addEventListener('mouseup', onEnd);
+})();
