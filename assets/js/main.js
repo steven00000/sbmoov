@@ -10,27 +10,37 @@
     .replaceAll('>','&gt;')
     .replaceAll('"','&quot;');
 
-  const cardActu = (it) => {
-    const title   = esc(it.title || 'Actualité');
-    const intro   = esc(it.intro || '');
-    const outro   = esc(it.outro || '');
-    const bullets = Array.isArray(it.bullets) ? it.bullets.map(esc) : [];
-    const dateObj = it.date ? new Date(it.date) : null;
-    const dateStr = dateObj && !isNaN(dateObj) ? dateObj.toLocaleDateString('fr-FR',{year:'numeric',month:'long',day:'numeric'}) : '';
-    const link    = it.link && it.link.url ? `
-      <p><a class="link-helloasso" href="${esc(it.link.url)}" target="_blank" rel="noopener">
-        ${esc(it.link.label || 'En savoir plus')}
-      </a></p>` : '';
+const cardActu = (it) => {
+  const title   = esc(it.title || 'Actualité');
+  const md = (s='') => esc(s).replaceAll('&ast;&ast;', '**')
+                            .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  const intro   = md(it.intro || '');
+  const outro   = md(it.outro || '');
+  const bullets = Array.isArray(it.bullets) ? it.bullets.map(esc) : [];
+  const dateObj = it.date ? new Date(it.date) : null;
+  const dateStr = dateObj && !isNaN(dateObj) ? dateObj.toLocaleDateString('fr-FR',{year:'numeric',month:'long',day:'numeric'}) : '';
 
-    return `
-      <article class="helloasso" id="${esc(it.id || '')}">
+  const img = it.image
+    ? `<div class="actu-img-wrap"><img src="${esc(it.image)}" alt="${title}" loading="lazy" decoding="async"></div>`
+    : '';
+
+  const href = it.link && it.link.url ? String(it.link.url) : '';
+  const safeLink = href && /^https?:\/\//i.test(href)
+    ? `<p><a class="link-helloasso" href="${esc(href)}" target="_blank" rel="noopener">${esc(it.link.label || 'En savoir plus')}</a></p>`
+    : '';
+
+  return `
+    <article class="helloasso helloasso--media" id="${esc(it.id || '')}">
+      ${img}
+      <div class="actu-content">
         <h3>${title}${dateStr ? `<span class="actu-date">— ${dateStr}</span>` : ''}</h3>
         ${intro ? `<p>${intro}</p>` : ''}
         ${bullets.length ? `<ul class="helloasso__notes">${bullets.map(li => `<li>${li}</li>`).join('')}</ul>` : ''}
         ${outro ? `<p>${outro}</p>` : ''}
-        ${link}
-      </article>`;
-  };
+        ${safeLink}
+      </div>
+    </article>`;
+};
 
   try {
     const res = await fetch('assets/data/actus.json', { cache: 'no-store' });
