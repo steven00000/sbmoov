@@ -63,7 +63,7 @@
         <h1 class="hero__title">
           Énergie&nbsp;Passion <span class="word-animated accent">Partage</span>
         </h1>
-        <p class="hero__text">SB MOOV’ – L’expression scénique et corporelle pour tous</p>
+        <p class="hero__text">SB MOOV’ – Expression scénique et corporelle</p>
         <div class="hero__actions">
           <a class="btn btn--ghost" href="#tarifs">Adhésion & Cotisation Annuelle</a>
         </div>
@@ -73,6 +73,10 @@
     <!-- ACTUALITÉS -->
     <section class="section" id="actus">
       <div class="container">
+        <header class="section__head">
+          <h2>Actualités</h2>
+          <p class="muted"> Retrouvez ici les <span class="word-animated accent">dernières nouvelles</span>, les <span class="word-animated accent">projets</span> et les <span class="word-animated accent">événements</span> de l’association. </p>        
+        </header>
         <div class="actus-list" id="actus-list"><!-- rempli en JS --></div>
       </div>
     </section>
@@ -112,44 +116,50 @@
     </section>
 
     <!-- MÉDIAS : CARROUSEL + YOUTUBE -->
-    <section class="section" id="#{#~_çà_}">
-      <div class="container">
-        <div class="section__head">
-          <h2>Souvenirs de scène</h2>
-          <p class="muted">Quelque images de l'assos...</p>
+<section class="section" id="media">
+  <div class="container">
+    <div class="section__head">
+      <h2>Souvenirs de scène</h2>
+      <p class="muted">Quelques images et vidéos de l’asso…</p>
+    </div>
+
+    <div class="media-split">
+
+      <!-- Carrousel gauche -->
+      <div class="carousel carousel--contain" id="galaCarousel">
+        <div class="carousel-track" aria-live="polite"></div>
+        <button class="carousel-btn prev" aria-label="Image précédente">&#10094;</button>
+        <button class="carousel-btn next" aria-label="Image suivante">&#10095;</button>
+      </div>
+
+      <!-- Vidéos à droite -->
+      <div class="media-right">
+        <!-- Exemple avec YouTube -->
+        <div class="video-embed">
+          <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/8OzNLPdWpHA"
+            title="Extrait Gala 2024 – Le Déménagement"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
         </div>
 
-        <div class="media-split">
-          <!-- Carrousel gauche -->
-          <div class="media-left">
-            <div class="carousel">
-              <div class="carousel-track">
-                <div class="carousel-item"><img src="assets/img/gala/SB Moov-1.jpg" alt="Gala 1"></div>
-                <div class="carousel-item"><img src="assets/img/gala/SB Moov-2.jpg" alt="Gala 2"></div>
-                <div class="carousel-item"><img src="assets/img/gala/SB Moov-3.jpg" alt="Gala 3"></div>
-                <div class="carousel-item"><img src="assets/img/gala/SB Moov-4.jpg" alt="Gala 4"></div>
-                <div class="carousel-item"><img src="assets/img/gala/SB Moov-5.jpg" alt="Gala 5"></div>
-                <div class="carousel-item"><img src="assets/img/gala/SB Moov-6.jpg" alt="Gala 6"></div>
-                <div class="carousel-item"><img src="assets/img/gala/SB Moov-7.jpg" alt="Gala 7"></div>
-              </div>
-              <button class="carousel-btn prev" aria-label="Image précédente">&#10094;</button>
-              <button class="carousel-btn next" aria-label="Image suivante">&#10095;</button>
-            </div>
-          </div>
-
-          <!-- Vidéos YouTube à droite -->
-          <div class="media-right">
-            <div class="video-embed">
-              <video autoplay loop muted playsinline>
-                <source src="assets/video/Les coulisses du Gala 2024.mp4" type="video/mp4">
-                Votre navigateur ne supporte pas la lecture vidéo.
-              </video>
-            </div>
-          </div>
-
+        <div class="video-embed">
+          <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/EPZPTXKfuyo"
+            title="Teaser Gala 2022 – SB MOOV’"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
         </div>
       </div>
-    </section>
+
+    </div>
+  </div>
+</section>
+
 
     <!-- PLANNING -->
     <section id="planning" class="section section--alt">
@@ -187,12 +197,7 @@
         </div>
 
         <div class="muted">
-          <p>L’adhésion peut être réglée en une seule fois ou en trois mensualités. Pour le paiement en 3 fois, les prélèvements auront lieu :</p>
-          <ul class="styled-list">
-            <li>Jour de l’inscription</li>
-            <li>8 décembre 2025</li>
-            <li>9 mars 2026</li>
-          </ul>
+          <p>L’adhésion peut être réglée en une seule fois ou en trois mensualités.</p>
         </div>
       </div>
     </section>
@@ -243,5 +248,15 @@
   </footer>
 
   <script src="assets/js/main.js" defer></script>
+
+  <!-- Lightbox pour le carrousel -->
+<div id="lightbox" class="lightbox" aria-hidden="true">
+  <button class="lightbox-close" aria-label="Fermer">✕</button>
+  <div class="lightbox-main">
+    <img id="lightbox-img" src="" alt="Aperçu">
+  </div>
+  <div class="lightbox-thumbs" id="lightbox-thumbs"></div>
+</div>
+
 </body>
 </html>
