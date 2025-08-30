@@ -1,15 +1,22 @@
 {
   "items": [
     {
-      "id": "adhesions-2025",
-      "title": "🎭 Adhésions 2025 – C’est en ligne ! 🎉",
-      "date": "2025-09-10",
-      "intro": "Les inscriptions à SB MOOV’ – Expression Scénique et Corporelle se font uniquement en ligne.",
+      "id": "reprise-2025",
+      "title": "📢 Reprise des cours",
+      "date": "2025-09-03",
+      "intro": "Les cours reprennent dès **mercredi 3 septembre 2025**. Accessible dès 3 ans révolus !",
       "bullets": [
-        "✅ Lisez bien toutes les indications avant de valider.",
-        "💳 Paiement en 1 fois ou en 3 fois."
+        "Dès 3 ans révolus",
+        "Cours d’essai gratuit",
+        "Tous niveaux"
       ],
-      "outro": "Merci pour votre confiance 🙏 On vous attend pour une année pleine d’énergie ! 💃🕺"
+      "outro": "Un cours d’essai gratuit est offert pour découvrir l’association 🎉",
+      "link": {
+        "label": "Plus d’infos",
+        "url": "#contact"
+      },
+      "image": "assets/img/reprise-2025.jpg"
     }
+    
   ]
 }
