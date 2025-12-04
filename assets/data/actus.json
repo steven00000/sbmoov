@@ -1,22 +1,25 @@
 {
   "items": [
     {
-      "id": "reprise-2025",
-      "title": "📢 Reprise des cours",
-      "date": "2025-09-03",
-      "intro": "Les cours reprennent dès **mercredi 3 septembre 2025**. Accessible dès 3 ans révolus !",
-      "bullets": [
-        "Dès 3 ans révolus",
-        "Cours d’essai gratuit",
-        "Tous niveaux"
-      ],
-      "outro": "Un cours d’essai gratuit est offert pour découvrir l’association 🎉",
+      "id": "gala-noel-2025",
+      "title": "🎄✨ La magie de Noël arrive avec le Gala 2025 de SB MOOV' ! ✨🎄",
+      "date": "2025-12-21",
+      "intro": "Le **dimanche 21 décembre à 15h30**, rejoignez-nous au **Gymnase Bernard Chabot (La Garde)** pour un après-midi plein d’émotions, de créativité et de surprises…\nUne vraie parenthèse enchantée ❄️💖\n\nEt… chut 🤫✨\nOn murmure que le **Père Noël** lui-même pourrait venir nous rendre visite 🎅🎁",
+      "Pour prolonger la fête": {
+        "bullets": [
+          "🍰 Buvette gourmande",
+          "🎟️ Tombola pleine de surprises",
+          "👉 Pensez à prendre de l’espèce !",
+          "🎫 Entrée : 6€",
+          "👶 Gratuit pour les moins de 10 ans"
+        ]
+      },
+      "outro": "👉 Billetterie juste ici :\nhttps://www.helloasso.com/associations/sb-moov-expression-scenique-et-corporelle/evenements/gala-noel-2025",
       "link": {
         "label": "Plus d’infos",
         "url": "#contact"
       },
       "image": "assets/img/reprise-2025.jpg"
     }
-    
   ]
 }
