@@ -2,22 +2,22 @@
   "items": [
     {
       "id": "gala-noel-2025",
-      "title": "🎄✨ La magie de Noël arrive avec le Gala 2025 de SB MOOV' ! ✨🎄",
+      "title": "🎄✨ Gala de Noël 2025",
       "date": "2025-12-21",
-      "intro": "Le **dimanche 21 décembre à 15h30**, rejoignez-nous au **Gymnase Bernard Chabot (La Garde)** pour un après-midi plein d’émotions…",
+      "intro": "Le **dimanche 21 décembre à 15h30**, rejoignez-nous au Gymnase Bernard Chabot (La Garde) pour un après-midi plein d’émotions, de créativité et de surprises… Une vraie parenthèse enchantée ❄💖",
       "bullets": [
-        "🍰 Buvette gourmande",
-        "🎟️ Tombola pleine de surprises",
-        "👉 Pensez à prendre de l’espèce !",
-        "🎫 Entrée : 6€",
-        "👶 Gratuit pour les moins de 10 ans"
+        "Buvette gourmande 🍰",
+        "Tombola pleine de surprises 🎟",
+        "Paiement en espèce uniquement 👉💶",
+        "Entrée : 6€",
+        "Gratuit pour les moins de 10 ans 👶"
       ],
-      "outro": "🎄🎟️ La magie commence ici !\nClique pour réserver ton billet :\n👉 🎅 Obtenir ma place maintenant : https://www.helloasso.com/associations/sb-moov-expression-scenique-et-corporelle/evenements/gala-noel-2025 🎁"
+      "outro": "Et… chut 🤫✨ On murmure que le Père Noël lui-même pourrait venir nous rendre visite 🎅🎁",
       "link": {
-        "label": "Plus d’infos",
-        "url": "#contact"
+        "label": "Billetterie",
+        "url": "https://www.helloasso.com/associations/sb-moov-expression-scenique-et-corporelle/evenements/gala-noel-2025"
       },
-      "image": "assets/img/galanoel2025.jpg"
+      "image": "assets/img/gala-noel-2025.jpg"
     }
   ]
 }
