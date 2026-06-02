@@ -1,23 +1,23 @@
 {
   "items": [
     {
-      "id": "gala-noel-2025",
-      "title": "🎄✨ Gala de Noël 2025",
-      "date": "2025-12-21",
-      "intro": "Le **dimanche 21 décembre à 15h30**, rejoignez-nous au Gymnase Bernard Chabot (La Garde) pour un après-midi plein d’émotions, de créativité et de surprises… Une vraie parenthèse enchantée ❄💖",
+      "id": "gala-2026-manoir-valombre",
+      "title": "🕯️ Mystère au Manoir Valombre — Gala 2026",
+      "date": "2026-07-05",
+      "intro": "✨ SB MOOV' vous ouvre les portes du Manoir Valombre… Cette année, notre gala vous plonge dans une enquête aussi élégante que mystérieuse. Au cœur d'un bal somptueux, un crime est commis. **Huit suspects. Huit histoires. Huit raisons de douter.**",
       "bullets": [
-        "Buvette gourmande 🍰",
-        "Tombola pleine de surprises 🎟",
-        "Paiement en espèce uniquement 👉💶",
-        "Entrée : 6€",
-        "Gratuit pour les moins de 10 ans 👶"
+        "🔎 Qui ment ? Qui manipule ? Et surtout… qui est le coupable ?",
+        "📅 Dimanche 5 juillet 2026 à 20h00",
+        "📍 Pasino de Hyères",
+        "🎟️ Tarif : 19,50 € — Enfant (- de 10 ans) : 5,50 €",
+        "💻 Billets en vente en ligne à partir du jeudi 4 juin à 19h30"
       ],
-      "outro": "Et… chut 🤫✨ On murmure que le Père Noël lui-même pourrait venir nous rendre visite 🎅🎁",
+      "outro": "Les artistes de SB MOOV' vous invitent à vivre une aventure captivante mêlant mystère, émotion, élégance et suspense. Vous ne serez pas de simples spectateurs… mais de véritables enquêteurs ! 🎭",
       "link": {
-        "label": "Billetterie",
-        "url": "https://www.helloasso.com/associations/sb-moov-expression-scenique-et-corporelle/evenements/gala-noel-2025"
+        "label": "🎟️ Réserver mes billets",
+        "url": "https://www.billetweb.fr/sb-moov-gala-2026-mystere-au-manoir-valombre"
       },
-      "image": "assets/img/gala-noel-2025.jpg"
+      "image": "assets/img/gala-2026-manoir-valombre.jpg"
     }
   ]
 }
