@@ -280,17 +280,24 @@ a{color:inherit;text-decoration:none}
 .lightbox-thumbs img.active{border-color:var(--brand-2)}
 .lightbox-close{position:absolute;top:16px;right:16px;font-size:2rem;background:none;border:none;color:#fff;cursor:pointer}
 
-/* ===== Responsive nav ===== */
-@media (max-width:760px){
-  .nav{padding-inline:12px}
-  .nav__inner{min-height:56px;display:flex;align-items:center;gap:10px}
-  .nav__name{display:none}
-  .nav__logo{width:32px;height:32px}
-  .menu{position:static !important;inset:auto !important;margin-left:auto;background:transparent !important;border:none !important;padding:0 !important;box-shadow:none !important;width:90px;display:flex !important;flex-direction:row;align-items:center;gap:10px}
-  .menu a{display:none !important}
-  .menu a.social{display:inline-grid !important}
-  .icon-btn{width:36px;height:36px;border-radius:10px}
-  .icon-btn svg{width:20px;height:20px}
+/* ===== Navigation lisible sur ordinateur et téléphone ===== */
+.menu .icon-btn:not(.social){width:auto;min-width:44px;padding:8px 10px;display:inline-flex;gap:7px;font-size:.875rem}
+.menu .icon-btn:not(.social) svg{display:none}
+.nav__toggle{font:inherit;color:var(--text);background:var(--paper);border:1px solid var(--border);border-radius:10px;padding:10px 16px;min-height:44px}
+section[id]{scroll-margin-top:84px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #ff70b8;outline-offset:4px}
+.actu-status{color:#ffc582;font-weight:700}
+.actus-archives summary{cursor:pointer;padding:16px 0;font-weight:700;font-size:1.05rem}
+.actu-content{min-width:0;overflow-wrap:anywhere}
+.footer__inner{flex-wrap:wrap;padding-block:16px}
+@media (max-width:980px){
+  .nav{background:rgba(11,11,15,.96)}
+  .nav__inner{min-height:64px;position:relative}
+  .nav__toggle{display:block}
+  .menu{display:none;position:absolute;top:100%;left:20px;right:20px;background:#121218;border:1px solid var(--border);padding:12px;border-radius:0 0 14px 14px;max-height:calc(100dvh - 80px);overflow-y:auto}
+  .menu.is-open{display:flex;flex-wrap:wrap;gap:8px}
+  .menu .icon-btn:not(.social){flex:1 1 40%;min-height:48px;justify-content:center;font-size:1rem}
+  .menu .icon-btn.social{min-width:44px;min-height:44px}
 }
 
 /* ===== Responsive media ===== */
@@ -324,3 +331,4 @@ a{color:inherit;text-decoration:none}
   .helloasso.helloasso--media{flex-direction:column;align-items:center;text-align:center}
   .helloasso.helloasso--media .actu-img-wrap{flex:0 0 auto;width:100%;max-width:280px}
 }
+
