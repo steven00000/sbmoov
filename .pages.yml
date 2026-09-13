@@ -1,0 +1,85 @@
+media:
+  input: assets/img/actualites
+  output: /assets/img/actualites
+  extensions: [jpg, jpeg, png, webp]
+  rename: safe
+
+content:
+  - name: actualites
+    label: Actualités du site
+    type: file
+    path: assets/data/actus.json
+    format: json
+    operations:
+      delete: false
+      rename: false
+    fields:
+      - name: items
+        label: Actualités
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: id
+            type: string
+            hidden: true
+          - name: title
+            label: Titre
+            type: string
+            required: true
+          - name: published
+            label: Afficher sur le site
+            type: boolean
+            default: false
+            description: Activez cette option quand votre annonce est prête, puis enregistrez. Une annonce masquée reste conservée.
+          - name: date
+            label: Date de l’actualité ou de l’événement
+            type: date
+            required: true
+            options:
+              format: yyyy-MM-dd
+          - name: endDate
+            label: Dernier jour de l’événement (facultatif)
+            type: date
+            default: ""
+            options:
+              format: yyyy-MM-dd
+            description: Dès le lendemain, l’annonce rejoint automatiquement les événements passés et son bouton disparaît. Laissez vide pour une information sans date de fin.
+          - name: intro
+            label: Texte de l’annonce
+            type: text
+            required: true
+            description: Écrivez normalement. Les retours à la ligne sont conservés.
+          - name: image
+            label: Affiche ou photo (facultatif)
+            type: image
+            description: Ajoutez une image JPG, PNG ou WebP depuis votre téléphone ou ordinateur. Choisissez de préférence une image de moins de 2 Mo.
+          - name: bullets
+            label: Informations pratiques (facultatif)
+            type: string
+            list: true
+            description: Une ligne par information, par exemple le lieu, l’horaire ou le tarif.
+          - name: outro
+            label: Texte complémentaire (facultatif)
+            type: text
+          - name: link
+            label: Bouton vers une billetterie ou une autre page (facultatif)
+            type: object
+            fields:
+              - name: label
+                label: Texte du bouton
+                type: string
+              - name: url
+                label: Adresse du lien
+                type: string
+                pattern:
+                  regex: '^$|^https?://[^\s]+$'
+                  message: Copiez une adresse complète commençant par https://
+
+settings:
+  content:
+    merge: true
+  commit:
+    identity: app
